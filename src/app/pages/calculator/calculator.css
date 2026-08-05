@@ -1,0 +1,10 @@
+
+.calc-container {
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: 32px;
+}
+
+.calc-days {
+    margin-left: 12px;
+}

@@ -1,0 +1,21 @@
+:host {
+  display: grid;
+  grid-template-rows: 0fr;
+  opacity: 0;
+  transition-property: grid-template-rows, opacity;
+  transition-timing-function: ease-in-out;
+  transition-duration: var(--duration, 1500ms);
+
+  &.open {
+    grid-template-rows: 1fr;
+    opacity: 1;
+  }
+
+  @media (prefers-reduced-motion) {
+    --duration: 0;
+  }
+}
+
+.collapsible-content {
+  overflow: hidden;
+}

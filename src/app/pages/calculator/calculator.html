@@ -1,0 +1,46 @@
+<h1>Con-Beitrag</h1>
+
+<p>
+Das Con-Haus, Strom, Gas, Wasser, Essen und Trinken und sonstige Anschaffungen müssen bezahlt werden.
+Jede:r Con-Teilnehmer:in bezahlt den Anteil abhängig von der Aufenthaltsdauer.
+</p> 
+<p>
+Der Grundbetrag für eine Übernachtung beträgt: {{ nightPrice | currency: 'EUR' : 'symbol' : '0.2-2' : 'de' }}<br>
+Für mehrere Nächte gibt es einen Rabatt, ebenso für den Con-Nachwuchs.
+</p>
+<p>
+Dieser Online-Kalkulator zeigt dir, was dich dein Aufenthalt auf der Rura Penthe kostet.
+</p>
+
+<div class="calc-container">
+    <div>
+        <mat-radio-group aria-labelledby="Select an option" 
+        (change)="onAgeSelectionChange($event)">
+            @for (item of ageSelection; track item.value ) {
+                <mat-radio-button [value]="item.value" [checked]="item.checked">{{ item.name }}</mat-radio-button><br>
+            }
+        </mat-radio-group>
+    </div>
+
+    <div class="calc-days">
+        <mat-form-field appearance="fill" style="width: 250px" >
+            <mat-label>Anzahl Übernachtungen</mat-label>
+            <mat-select (selectionChange)="onDaySelectionChange($event)">
+                @for (item of nightSelection; track item.count ) {
+                    <mat-option [value]="item.count">{{ item.value }}</mat-option>            
+                }
+            </mat-select>
+        </mat-form-field><br>
+
+        <h2>
+            Zu zahlen: {{ amount | currency: 'EUR' : 'symbol' : '0.2-2' : 'de' }}
+        </h2>
+    </div>
+
+
+</div>
+
+
+
+
+

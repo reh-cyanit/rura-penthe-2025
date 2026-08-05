@@ -1,0 +1,15 @@
+<div class="flex flex-col gap-3 w-[300px] max-w-[300px]">
+
+  <button type="button" class="btn" (click)="open.set(!open())">
+    {{ title }}
+    <span>
+      {{ text() }}                        
+    </span>
+  </button>
+
+  <div>
+    <app-collapsible-content [open]="open()">
+      <ng-content/>
+    </app-collapsible-content>
+  </div>
+</div>

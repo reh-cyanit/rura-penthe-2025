@@ -1,0 +1,22 @@
+.jump {
+    color: -webkit-link;
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+
+.jump:link {
+  text-decoration: none;
+}
+
+.jump:visited {
+  text-decoration: none;
+}
+
+.jump:hover {
+  text-decoration: underline;
+}
+
+.jump:active {
+  text-decoration: underline;
+}
