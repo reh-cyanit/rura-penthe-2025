@@ -5,6 +5,7 @@
   transition-property: grid-template-rows, opacity;
   transition-timing-function: ease-in-out;
   transition-duration: var(--duration, 1500ms);
+  align-items: start;
 
   &.open {
     grid-template-rows: 1fr;
@@ -18,5 +19,4 @@
 
 .collapsible-content {
   overflow: hidden;
-  align-items: start;
 }
