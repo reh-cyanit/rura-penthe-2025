@@ -18,4 +18,5 @@
 
 .collapsible-content {
   overflow: hidden;
+  align-items: start;
 }
