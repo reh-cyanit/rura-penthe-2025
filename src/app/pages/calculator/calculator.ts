@@ -1,9 +1,9 @@
 import { registerLocaleData, CurrencyPipe } from "@angular/common";
-import { MatSelectModule } from "@angular/material/select"
-import { Component, LOCALE_ID, NgModule } from "@angular/core";
+import { MatSelectChange, MatSelectModule } from "@angular/material/select"
+import { Component } from "@angular/core";
 
 import de from "@angular/common/locales/de";
-import { MatRadioModule } from "@angular/material/radio";
+import { MatRadioChange, MatRadioModule } from "@angular/material/radio";
 registerLocaleData(de);
 
 
@@ -38,22 +38,22 @@ export class Calculator {
     {"name": "11 - 15 Jahre", value: 0.6666, "checked": false}
   ];
 
-  private discount: number = 0.01;
-  private ageDiscount: number = 1.0;
-  
-  protected nightPrice: number = 42.0;
-  protected amount: number = 0;
-  protected nightCount: number = 0;
+  private discount = 0.01;
+  private ageDiscount = 1.0;
+
+  protected nightPrice = 42.0;
+  protected amount = 0;
+  protected nightCount = 0;
 
 
-  protected onDaySelectionChange(event: any) {
+  protected onDaySelectionChange(event: MatSelectChange) {
     if (event.value) {
       this.nightCount = event.value;
       this.calculateAmount(1);
     }
   }
 
-  protected onAgeSelectionChange(event: any) {
+  protected onAgeSelectionChange(event: MatRadioChange) {
 
      this.ageDiscount = event.value;
      this.calculateAmount(1);
@@ -70,8 +70,8 @@ export class Calculator {
     }
     
     calculatedDays = calculatedDays + 1;
-    let percent = calculatedDays *  this.discount + perc;
-    let discount = this.nightPrice * percent;
+    const percent = calculatedDays *  this.discount + perc;
+    const discount = this.nightPrice * percent;
     sub = (sub + this.nightPrice) - discount;
 
     return this.calculate(calculatedDays, sub, percent);

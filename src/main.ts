@@ -1,6 +1,5 @@
 import { bootstrapApplication } from '@angular/platform-browser';
 import { appConfig } from './app/app.config';
-import { App } from './app/app';
 import { RuraPenthe } from './app/pages/rura-penthe/rura-penthe';
 
 bootstrapApplication(RuraPenthe, appConfig)

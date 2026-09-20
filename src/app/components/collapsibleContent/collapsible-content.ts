@@ -2,8 +2,6 @@ import { NgTemplateOutlet } from '@angular/common';
 import { Component, contentChild, ElementRef, inject, input, TemplateRef } from '@angular/core';
 import { toObservable, toSignal } from '@angular/core/rxjs-interop';
 import { filter, fromEvent, map, of, switchMap } from 'rxjs';
-import { Termin } from "../../pages/termin/termin";
-import { WhatsIs } from "../../pages/whats-is/whats-is";
 
 @Component({
   selector: 'app-collapsible-content',

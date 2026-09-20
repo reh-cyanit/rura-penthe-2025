@@ -1,18 +1,30 @@
 <div class="carousel-inner background" role="listbox">
-        <div class="title">RURA PENTHE</div>
-        <img src="rp_banner.jpg">
+        
+        <img src="rurapenthe-endor_banner.jpg" alt="Rura Penthe und Endor">
 </div>
 
 <div class="container">
     <div class="container-content">  
         <div>
             <app-collapsible #colWhatsIs
-                [title]="'Was ist Rura Penthe'">
+                [title]="'Was ist Rura Penthe'"
+                [icon]="'rurapenthe_logo_symbol.png'">
                 <app-whats-is/>
             </app-collapsible>
             <app-collapsible #colTermin
-                [title]="'Rura Penthe 2027'">
+                [title]="'Rura Penthe 2027'"
+                [icon]="'rurapenthe_logo_symbol.png'">
                 <app-termin (jump)="openCollapsible($event)"/>
+            </app-collapsible>
+            <app-collapsible #colTimeCapsule
+                [title]="'Rura Penthe 2028'"
+                [icon]="'rurapenthe_logo_symbol.png'">
+                <app-time-capsule/>
+            </app-collapsible>
+            <app-collapsible #colEndor
+                [title]="'Endor'"
+                [icon]="'endor_logo_symbol.png'">
+                <app-endor/>
             </app-collapsible>
             <app-collapsible #colCalcalculator
                 [title]="'Con-Beitrag Kalkulator'">
@@ -30,4 +42,3 @@
         <div class="mt-1"></div>
     </div>
 </div>
-<router-outlet />

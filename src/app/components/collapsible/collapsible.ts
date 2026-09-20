@@ -1,4 +1,4 @@
-import { AfterViewInit, Component, computed, ElementRef, Input, OnDestroy, signal, viewChild, ɵunwrapWritableSignal } from '@angular/core';
+import { AfterViewInit, Component, computed, ElementRef, Input, OnDestroy, signal, viewChild } from '@angular/core';
 import { CollapsibleContent } from '../collapsibleContent/collapsible-content';
 
 @Component({
@@ -9,7 +9,8 @@ import { CollapsibleContent } from '../collapsibleContent/collapsible-content';
 })
 
 export class Collapsible  implements AfterViewInit, OnDestroy {
-  @Input() public title: string = "";
+  @Input() public title = "";
+  @Input() public icon: undefined | string = "";
 
     readonly titleText = computed(() => this.title); 
     protected open = signal(false);
