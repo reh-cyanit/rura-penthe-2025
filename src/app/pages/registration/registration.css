@@ -1,0 +1,10 @@
+.jump {
+    color: #2e89c1;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.jump:hover,
+.jump:active {
+  text-decoration: underline;
+}

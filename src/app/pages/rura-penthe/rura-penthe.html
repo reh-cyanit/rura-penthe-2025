@@ -7,17 +7,13 @@
     <div class="container-content">  
         <div>
             <app-collapsible #colWhatsIs
-                [title]="'Was ist Rura Penthe'"
+                [title]="'Rura Penthe'"
                 [icon]="'rurapenthe_logo_symbol.png'">
                 <app-whats-is/>
             </app-collapsible>
-            <app-collapsible #colTermin
-                [title]="'Rura Penthe 2027'"
-                [icon]="'rurapenthe_logo_symbol.png'">
-                <app-termin (jump)="openCollapsible($event)"/>
-            </app-collapsible>
+
             <app-collapsible #colTimeCapsule
-                [title]="'Rura Penthe 2028'"
+                [title]="'Rura Penthe Zeitkapsel'"
                 [icon]="'rurapenthe_logo_symbol.png'">
                 <app-time-capsule/>
             </app-collapsible>
@@ -31,8 +27,8 @@
                 <app-calculator/>
             </app-collapsible>
             <app-collapsible #colRegistration
-                [title]="'Anmeldung und weitere Informationen'" >
-                <app-registration/>
+                [title]="'Informationen und Anmeldung'" >
+                <app-registration (jump)="openCollapsible($event)"/>
             </app-collapsible>
             <app-collapsible #colImpressum
                 [title]="'Impressum'" >

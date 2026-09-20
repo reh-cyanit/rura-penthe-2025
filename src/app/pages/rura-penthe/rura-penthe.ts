@@ -1,7 +1,6 @@
 import { Component, ViewChild } from "@angular/core";
 import { Registration } from "../registration/registration";
 import { WhatsIs } from "../whats-is/whats-is";
-import { Termin } from "../termin/termin";
 import { Impressum } from "../impressum/impressum";
 import { Calculator } from "../calculator/calculator";
 import { Collapsible } from "../../components/collapsible/collapsible";
@@ -12,7 +11,6 @@ import { TimeCapsule } from "../time-capsule/time-capsule";
   selector: "app-rura-penthe",
   imports: [
     WhatsIs,
-    Termin,
     Endor,
     Registration,
     Impressum,
@@ -26,7 +24,6 @@ import { TimeCapsule } from "../time-capsule/time-capsule";
 
 export class RuraPenthe  {
   @ViewChild("colWhatsIs") colWhatsIs!: Collapsible; 
-  @ViewChild("colTermin") colTermin!: Collapsible;
   @ViewChild("colEndor") colEndor!: Collapsible;
   @ViewChild("colCalcalculator") colCalcalculator!: Collapsible;
   @ViewChild("colRegistration") colRegistration!: Collapsible;
@@ -36,7 +33,6 @@ export class RuraPenthe  {
     
       if (col === "calculator") {
         this.colWhatsIs.setOpen(false);
-        this.colTermin.setOpen(false);
         this.colEndor.setOpen(false);
         this.colCalcalculator.setOpen(true);
         this.colRegistration.setOpen(false);
