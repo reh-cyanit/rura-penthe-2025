@@ -60,7 +60,8 @@ export class Calculator {
   }
 
   protected calculateAmount(dayCount: number) {
-    this.amount = this.calculate(dayCount, this.nightPrice, 0.0) * this.ageDiscount;
+    const sub = this.calculate(dayCount, this.nightPrice, 0.0);
+    this.amount = Math.ceil(sub * this.ageDiscount);
   }
 
   private calculate(calculatedDays: number, sub: number, perc: number): number {
@@ -68,11 +69,11 @@ export class Calculator {
     if (calculatedDays === this.nightCount) {
       return sub;
     }
-    
+
     calculatedDays = calculatedDays + 1;
     const percent = calculatedDays *  this.discount + perc;
     const discount = this.nightPrice * percent;
-    sub = (sub + this.nightPrice) - discount;
+    sub = Math.ceil((sub + this.nightPrice) - discount);
 
     return this.calculate(calculatedDays, sub, percent);
   }
